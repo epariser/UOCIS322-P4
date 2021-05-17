@@ -1,11 +1,10 @@
-UO CIS - Project 4
-Brevet calculator
-
+UOCIS322 - Project 4
+Project: Brevet Calculator
 Author: Evan Pariser
 Contact: epariser@uoregon.edu
 
-Project detatails
-
+details
+uses this table to calculate brevet times
 Control location (km)	Minimum Speed (km/hr)	Maximum Speed (km/hr)
 0    - 200				15						34
 200  - 400				15						32
@@ -14,3 +13,5 @@ Control location (km)	Minimum Speed (km/hr)	Maximum Speed (km/hr)
 1000 - 1300				13.333					26
 
 
+Developers
+credentials_skel.ini file is provided so you can copy and create your own credentials file
