@@ -27,6 +27,9 @@ def calc_time(control_dist_km, open):
    index = 1 # 1 if open 2 if closed
    if open:
       index = 2
+   
+   if control_dist_km == 0:
+	   return 0 if open else 60
 
    time = 0
    for i in range(len(speed_table)):
@@ -98,16 +101,5 @@ def close_time(control_dist_km, brevet_dist_km, brevet_start_time):
     
    return opening_time
 
-def main():
-   control_dist = 60
-   brevet_dist = 200
-   brevet_start = arrow.get('2013-01-01 00:00')
-   print(brevet_start)
-   print(open_time(control_dist, brevet_dist, brevet_start))
-   print(close_time(control_dist, brevet_dist, brevet_start))
-   print(calc_time(control_dist, True))
-   print(calc_time(control_dist, False))
-
-main()
 
 

@@ -50,14 +50,14 @@ def _calc_times():
     Expects one URL-encoded argument, the number of miles.
     """
     app.logger.debug("Got a JSON request")
-    km = request.args.get('brevet_dist', 1000, type=float)
     
-    brevet_dist = request.args.get('brevet_dist', type=int)
-    start_time_str = request.args.get('start_time', type=str)
-    start_time = arrow.get(start_time_str, 'YYYY-MM-DDTHH:mm')
-    
+    km = request.args.get('brevet_dist', 999, type=float)
     app.logger.debug("km={}".format(km))
     app.logger.debug("request.args: {}".format(request.args))
+    
+    brevet_dist = request.args.get('brevet_dist', 200, type=int)
+    start_time_str = request.args.get('start_time', arrow.now(), type=str)
+    start_time = arrow.get(start_time_str, 'YYYY-MM-DDTHH:mm')
     
     open_time = acp_times.open_time(km, brevet_dist, start_time)
     close_time = acp_times.close_time(km, brevet_dist, start_time)
